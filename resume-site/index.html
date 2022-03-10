@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            fetch('https://p3a31r2p6e.execute-api.us-east-1.amazonaws.com/Prod/put')
+                .then(() => fetch('https://p3a31r2p6e.execute-api.us-east-1.amazonaws.com/Prod/get'))
+                .then(response => response.json())
+                .then((data) => {
+                    document.getElementById('hits').innerText = data.count
+            }) 
+        </script>
+        <title>Morolake Anifowose's Resume</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="full-content">
+                <div class="header" style="text-align: center;">
+                    <h2>Anifowose Airat Morolake</h2>
+                    <p><a href="mailto:morolaanney@gmail.com">morolaanney@gmail.com</a> | +234-8164697759 | <a href="https://www.linkedin.com/in/morolake-anifowose/">LinkedIn</a></p>                
+                    <p>Quality Assurance Analyst turned DevOps Engineer. Interested in all things Cloud Computing.</p>
+                 </div>
+                
+
+                <div class="main">
+                    <div>
+                        <h4>EDUCATION</h4><hr>
+                        <div style="margin-left: 30px;">
+                            <p><b>BSc</b> Babcock University, Nigeria, Computer Science (Technology)</p>
+                            <p class="dates">2015-2019</p> 
+                            <p>First Class Honors</p>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <h4>WORK EXPERIENCE</h4><hr>
+                        <div class="" style="margin-left: 30px;">
+                            <p><b>AxoCheck</b>, Development Operations Engineer</p>
+                            <p class="dates">October 2021 - present</p>
+                            <ul>
+                                <li>Handled the migration of AWS servers</li>
+                                <li>Monitored cloud resource utilization, access, and associated costs</li>
+                                <li>Ensured the availability, performance, and scalability of applications in respect of provendesign and architecture best practices</li>
+                            </ul>
+                        </div>
+                        <div style="margin-left: 30px;">
+                            <p><b>SystemSpecs Limited</b>, Quality Assurance Analyst</p>
+                            <p class="dates">August 2019 - December 2021</p>
+                            <ul>
+                                <li>Identified and tracked defects with GitLab and supported developers in resolving problems by creating additional tests</li>
+                                <li>Wrote and optimized test cases for Remita Payment Gateway System</li>
+                                <li>Deployed microservices on the test environment</li>
+                                <li>Tested application compatibility on different browsers</li>
+                                <li>Carried out functional testing on products</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>HONORS & AWARDS</h4><hr>
+                        <div>
+                            <p>
+                                <b>Best Graduating Student, School of Computing and Engineering Sciences</b>
+                                <br>Babcock University, Nigeria (2019)</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>CERTIFICATIONS</h4><hr>
+                        <div>
+                            <p>ISTQB Certified Tester Foundation Level (January 2019)</p>
+                            <p>AWS Certified Cloud Practitioner (December 2021)</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>COMMUNITY SERVICE</h4><hr>
+                        <div>
+                            <p><b>She Code Africa</b><br>Member</p>
+                        </div>
+                        <div>
+                            <p><b>Lagos Food Bank Initiative, Nigeria</b> (July 2021 - present)<br>Volunteer</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>SKILLS AND COMPETENCIES</h4><hr>
+                        <p>AWS (EC2, RDS, S3, CloudFormation, SAM), SQL, Linux, Git</p>
+                    </div> 
+                </div>
+                
+                <!-- <div> -->
+                    <p class="visits" style="text-align: center;">Visits: # <span id="hits"></span> </p>
+                <!-- </div> -->
+            </div>
+        </div>
+    </body>
+</html>
