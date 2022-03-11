@@ -1,5 +1,5 @@
 Sync file to s3:
-    aws-vault exec Rolake --no-session -- aws s3 sync ./resume-site s3://cloudresumechallenge-airat2
+aws-vault exec Rolake --no-session -- aws s3 sync ./resume-site s3://cloudresumechallenge-airat2
 
 Deploy
 sam build && aws-vault exec Rolake --no-session -- sam deploy

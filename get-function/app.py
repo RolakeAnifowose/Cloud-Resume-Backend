@@ -1,6 +1,5 @@
 import boto3
 import simplejson as json #Makes dynamodb decimal value serializable
-from decimal import Decimal
 
 # import requests
 
@@ -38,7 +37,6 @@ def lambda_handler(event, context):
     response = table.get_item(
         Key={
             'ID': ID
-            # columns[0]:2
         }
     )
 

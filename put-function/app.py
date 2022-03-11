@@ -36,7 +36,6 @@ def lambda_handler(event, context):
     response = table.update_item(
         Key={
             'ID': ID
-            # columns[0]:2
         },
         UpdateExpression="set Visitors = Visitors + :val",
         ExpressionAttributeValues={
