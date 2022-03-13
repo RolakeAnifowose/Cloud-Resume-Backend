@@ -16,7 +16,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
       - name: test get-function
-        run: cd cloud-resume-challenge/get-function/app.py
-      - name: test put-function
-        run: cd cloud-resume-challenge/put-function/app.py
+        run: python -m unittest discover tests
+      # - name: test put-function
+      #   run: cd cloud-resume-challenge/put-function/app.py
       # - run: python my_script.py
