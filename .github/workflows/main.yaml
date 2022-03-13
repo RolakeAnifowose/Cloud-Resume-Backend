@@ -21,7 +21,7 @@
 #       #   run: cd cloud-resume-challenge/put-function/app.py
 #       # - run: python my_script.py
 
-name: CI
+name: CI/CD Backend Cloud Resume
 on:
   push:        
     paths:
