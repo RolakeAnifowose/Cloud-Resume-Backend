@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ '2.x', '3.x' ]
+        python-version: [ '3.x' ]
     name: Python ${{ matrix.python-version }} sample
     steps:
       - uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
       - name: test get-function
-        run: cd cloud-resume-challenge/put-function & python -m unittest tests/unit/sum_test.py
+        run: python -m unittest tests/unit/sum_test.py
       # - name: test put-function
       #   run: cd cloud-resume-challenge/put-function/app.py
       # - run: python my_script.py
