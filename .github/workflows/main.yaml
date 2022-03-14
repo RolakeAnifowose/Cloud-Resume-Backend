@@ -21,26 +21,19 @@ jobs:
       #   run: cd cloud-resume-challenge/put-function/app.py
       # - run: python my_script.py
 
-# name: CI/CD Backend Cloud Resume
-# on:
-#   push:        
-#     paths:
-#     - 'Lambda/*'
-#     - 'template.yaml'
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@master
-      
-#       - uses: actions/checkout@v2
-#       - name: Set up Python 3.8
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: 3.8
-#       - name: Install dependencies
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install  pytest
-#           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi 
+  build-and-deploy-infra:
+    needs: test-infra
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: aws-actions/setup-sam@v1
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - run: sam-build
+        working-directory: cloud-resume-challenge
+      - run: sam-deploy --no-confirm-changeset --no-fail-on-empty-changeset
+        working-directory: cloud-resume-challenge
