@@ -1,19 +1,23 @@
 .container{
     display:flex; flex-direction:column; justify-content:center;
-    width: 70%;
+    width: 50%;
     margin: auto;
 }
+
 hr{
     padding: 0px;
     margin: 0px;    
     margin-top:-1.3em;
   }
 .full-content {
-    box-shadow: 0 0 10px rgb(50 50 50 / 18%);
+    box-shadow: 0 0 10px rgb(50 50 50 / 48%);
     margin: 25px;
 }
 .dates {
     margin-top: -.5em;
+    text-align: justify; /* For Edge */
+  -moz-text-align-last: right; /* For Firefox prior 58.0 */
+  text-align-last: right;
 }
 a {
     color: #fff;
@@ -47,4 +51,33 @@ a:hover {
     .full-content {
         margin: 5px;
     }
+}
+
+.certifications {
+    /* list-style-type: none; Removes the bullets */
+    /* padding: 0px; */
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.column {
+    float: left;
+    display: flex;
+    width: 20%;
+    /*padding: 10px;
+    height: 300px; Should be removed. Only for demonstration */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
